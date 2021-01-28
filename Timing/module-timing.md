@@ -19,3 +19,8 @@ It simply returns an object with a `value` key that changes after one second unl
 In our [jest.test.js](/Timing/jest.test.js#L3-11) file, we set up a describe block with
 a `beforeEach` that enables jest's fake timers, and an `afterEach` that flushes the
 pending calls before restoring the real timing functions.
+
+### first test
+
+We then write [our first test](/Timing/jest.test.js#L13-22) that uses the
+`advanceTimersByTime` function to simulate 999ms passing and then 1ms passing.
