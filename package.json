@@ -1,0 +1,11 @@
+{
+  "name": "js-tdd-201",
+  "version": "1.0.0",
+  "description": "The goal of this course is to dive deeper into the particulars of testing in JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm ci && node install-all"
+  },
+  "author": "james.hoekzema@wwt.com",
+  "license": "ISC"
+}
