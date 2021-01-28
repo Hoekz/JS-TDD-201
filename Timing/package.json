@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jest.test": "../node_modules/.bin/jest jest.test.js",
+    "jasmine.test": "../node_modules/.bin/jasmine jasmine.test.js",
+    "sinon.test": "../node_modules/.bin/mocha sinon.test.js"
   },
   "author": "",
   "license": "ISC"
