@@ -24,3 +24,9 @@ pending calls before restoring the real timing functions.
 
 We then write [our first test](/Timing/jest.test.js#L13-22) that uses the
 `advanceTimersByTime` function to simulate 999ms passing and then 1ms passing.
+
+### second test
+
+And in [our second test](/Timing/jest.test.js#L24-35) we can see that calling `cancel`
+(which calls `clearTimeout`) does indeed stop the waiting function from executing
+after 1 second.
