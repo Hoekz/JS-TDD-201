@@ -33,3 +33,29 @@ describe('change after one second', () => {
         expect(tracker.value).toBe(false);
     });
 });
+
+describe('change every second', () => {
+    beforeEach(() => {
+        jasmine.clock().install();
+    });
+
+    afterEach(() => {
+        jasmine.clock().uninstall();
+    });
+
+    it('should change after each second until cancelled', () => {
+        const tracker = changeEverySecond();
+        expect(tracker.value).toBe(0);
+
+        jasmine.clock().tick(1000);
+        expect(tracker.value).toBe(1);
+
+        jasmine.clock().tick(2000);
+        expect(tracker.value).toBe(3);
+
+        tracker.cancel();
+
+        jasmine.clock().tick(2000);
+        expect(tracker.value).toBe(3);
+    });
+});
