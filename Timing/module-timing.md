@@ -30,3 +30,9 @@ We then write [our first test](/Timing/jasmine.test.js#L12-21) that uses the clo
 
 And in [our second test](/Timing/jasmine.test.js#L23-34) we can see that calling `cancel`
 (which calls `clearTimeout`) does indeed stop the waiting function from executing after 1 second.
+
+### setInterval instance
+
+Looking at the function using `setInterval` in [timing.js](/Timing/timing.js#L12-20), we can see it
+follows a very similar pattern, exposing a `value` that increments every second until the `cancel`
+function is called.
