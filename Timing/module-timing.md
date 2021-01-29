@@ -20,3 +20,8 @@ In our [jasmine.test.js](/Timing/jasmine.test.js#L3-10) file, we set up a descri
 a `beforeEach` that installs jasmine's clock, and an `afterEach` that uninstalls it.
 
 This clock controls time stepping both for timing functions and dates.
+
+### first test
+
+We then write [our first test](/Timing/jasmine.test.js#L12-21) that uses the clock's
+`tick` function to simulate 999ms passing and then 1ms passing.
