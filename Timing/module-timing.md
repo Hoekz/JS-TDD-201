@@ -24,3 +24,8 @@ that restores timers to normal behavior using the clock instance.
 
 We then write [our first test](/Timing/sinon.test.js#L16-25) that uses the clock's
 `tick` function to simulate 999ms passing and then 1ms passing.
+
+### second test
+
+And in [our second test](/Timing/sinon.test.js#L27-38) we can see that calling `cancel`
+(which calls `clearTimeout`) does indeed stop the waiting function from executing after 1 second.
