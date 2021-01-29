@@ -36,3 +36,7 @@ after 1 second.
 Looking at the function using `setInterval` in [timing.js](/Timing/timing.js#L12-20), we can see it
 follows a very similar pattern, exposing a `value` that increments every second until the `cancel`
 function is called.
+
+### setup tests
+
+We can use the same setup as before in [our test file](/Timing/jest.test.js#L38-46).
