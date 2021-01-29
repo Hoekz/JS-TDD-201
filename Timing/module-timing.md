@@ -25,3 +25,8 @@ This clock controls time stepping both for timing functions and dates.
 
 We then write [our first test](/Timing/jasmine.test.js#L12-21) that uses the clock's
 `tick` function to simulate 999ms passing and then 1ms passing.
+
+### second test
+
+And in [our second test](/Timing/jasmine.test.js#L23-34) we can see that calling `cancel`
+(which calls `clearTimeout`) does indeed stop the waiting function from executing after 1 second.
