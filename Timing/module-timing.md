@@ -36,3 +36,7 @@ And in [our second test](/Timing/jasmine.test.js#L23-34) we can see that calling
 Looking at the function using `setInterval` in [timing.js](/Timing/timing.js#L12-20), we can see it
 follows a very similar pattern, exposing a `value` that increments every second until the `cancel`
 function is called.
+
+### setup tests
+
+We can use the same setup as before in [our test file](/Timing/jasmine.test.js#L37-44).
