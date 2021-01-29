@@ -19,3 +19,8 @@ It simply returns an object with a `value` key that changes after one second unl
 In our [sinon.test.js](/Timing/sinon.test.js#L5-14) file, we set up a describe block with
 a `beforeEach` that enables starts and captures sinon's fake timers, and an `afterEach`
 that restores timers to normal behavior using the clock instance.
+
+### first test
+
+We then write [our first test](/Timing/sinon.test.js#L16-25) that uses the clock's
+`tick` function to simulate 999ms passing and then 1ms passing.
