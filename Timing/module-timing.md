@@ -29,3 +29,9 @@ We then write [our first test](/Timing/sinon.test.js#L16-25) that uses the clock
 
 And in [our second test](/Timing/sinon.test.js#L27-38) we can see that calling `cancel`
 (which calls `clearTimeout`) does indeed stop the waiting function from executing after 1 second.
+
+### setInterval instance
+
+Looking at the function using `setInterval` in [timing.js](/Timing/timing.js#L12-20), we can see it
+follows a very similar pattern, exposing a `value` that increments every second until the `cancel`
+function is called.
