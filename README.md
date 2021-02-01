@@ -10,9 +10,10 @@ The goal of this course is to dive deeper into the particulars of testing in Jav
 
 ## Dates
 
- - Using MockDate: `MockDate.set()`
- - Using Moment: Spy on or mock `Date.now()`
+ - Using jest: `jest.useFakeTimers()`
+ - Using sinon: `sinon.useFakeTimers()`
  - Using jasmine: `jasmine.clock().mockDate()`
+ - Using MockDate: `MockDate.set()`
 
 ## Network Activity
 
