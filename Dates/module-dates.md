@@ -34,3 +34,11 @@ Our `getDailyReminders` method simply gets the current date and filters the remi
 matches and the date falls between the `start` and `end`. It then returns each of the corresponding labels.
 
 Our `clearReminders` method simply resets the list of reminders. We've also exposed the `day` of week lookup object.
+
+### test setup
+
+In our [sinon.test.js](/Dates/sinon.test.js#L5-15) file, we can setup a `sinon` clock that enables mocking of timing
+functionality.
+
+We also have a call to `restore` the clock, which restores JavaScript to normal behavior. We also call `clearReminders`
+to avoid tests polluting one another.
