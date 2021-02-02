@@ -33,3 +33,12 @@ Our `getDailyReminders` method simply gets the current date and filters the remi
 matches and the date falls between the `start` and `end`. It then returns each of the corresponding labels.
 
 Our `clearReminders` method simply resets the list of reminders. We've also exposed the `day` of week lookup object.
+
+### test setup
+
+In our [jest.test.js](/Dates/jest.test.js#L3-11) file, we can simply call to `useFakeTimers` with `'modern'` so
+that `jest` uses `sinon/fake-timers` that allows use to mock dates. `'modern'` will become the default state
+in `jest 27`.
+
+We also have set up a called to `useRealTimers` to restore normal behavior and also call `clearReminders` to
+avoid tests polluting one another.
