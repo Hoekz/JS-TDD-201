@@ -42,3 +42,9 @@ functionality.
 
 We also have a call to `restore` the clock, which restores JavaScript to normal behavior. We also call `clearReminders`
 to avoid tests polluting one another.
+
+### set system time
+
+We can then create a test in [our test file](/Dates/sinon.test.js#L17-33) that illustrates how to mock a date.
+We can call our clock's `setSystemTime` with a constructed `Date` to set the exact time and verify that when
+the date and day of week match, we get back the created reminder.
