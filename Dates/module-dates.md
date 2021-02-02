@@ -21,3 +21,15 @@ We'll start by looking at the code we want to test in [reminders.js](/Dates/remi
 
 For internal purposes, we declare our `reminders` array, a quick lookup table for days of the week, and a function to help us sort dates
 as strings for easier comparisons at the date level.
+
+### reminders exports
+
+We then export some methods from [reminders.js](/Dates/reminders.js#L21-40) to add, check, and clear reminders.
+
+Our `addDailyReminder` method shows that each reminder will consist of a `label`, a `start` date, an `end` date,
+and a `days` list to indicate what days of the week the reminder should trigger on.
+
+Our `getDailyReminders` method simply gets the current date and filters the reminders by whether the day of week
+matches and the date falls between the `start` and `end`. It then returns each of the corresponding labels.
+
+Our `clearReminders` method simply resets the list of reminders. We've also exposed the `day` of week lookup object.
