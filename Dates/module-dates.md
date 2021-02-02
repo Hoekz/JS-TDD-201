@@ -40,3 +40,9 @@ Our `clearReminders` method simply resets the list of reminders. We've also expo
 In our [mockdate.test.js](/Dates/mockdate.test.js#L5-9) file, we only have to set up an `afterEach` (or an
 `afterAll` if we are careful in each test) to call `reset` to restore the normal `Date` behavior as well as
 a call to `clearReminders` to avoid tests polluting one another.
+
+### set
+
+We can then create a test in [our test file](/Dates/mockdate.test.js#L11-27) that illustrates how to mock a date.
+We can make calls to `mockDate.set` with a constructed `Date` to set the exact time and verify that when the
+date and day of week match, we get back the created reminder.
