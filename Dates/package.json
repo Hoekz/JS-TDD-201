@@ -6,9 +6,13 @@
   "scripts": {
     "jest.test": "env TZ=GMT ../node_modules/.bin/jest jest.test.js",
     "jasmine.test": "env TZ=GMT ../node_modules/.bin/jasmine jasmine.test.js",
-    "sinon.test": "env TZ=GMT ../node_modules/.bin/mocha sinon.test.js"
+    "sinon.test": "env TZ=GMT ../node_modules/.bin/mocha sinon.test.js",
+    "mockdate.test": "env TZ=GMT ../node_modules/.bin/mocha mockdate.test.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mockdate": "^3.0.2"
+  }
 }
