@@ -34,3 +34,9 @@ Our `getDailyReminders` method simply gets the current date and filters the remi
 matches and the date falls between the `start` and `end`. It then returns each of the corresponding labels.
 
 Our `clearReminders` method simply resets the list of reminders. We've also exposed the `day` of week lookup object.
+
+### test setup
+
+In our [mockdate.test.js](/Dates/mockdate.test.js#L5-9) file, we only have to set up an `afterEach` (or an
+`afterAll` if we are careful in each test) to call `reset` to restore the normal `Date` behavior as well as
+a call to `clearReminders` to avoid tests polluting one another.
