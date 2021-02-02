@@ -2,11 +2,11 @@ const schedule = require('./reminders');
 
 describe('get daily reminders', () => {
     beforeEach(() => {
-        jest.useFakeTimers('modern');
+        jasmine.clock().install();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        jasmine.clock().uninstall();
         schedule.clearReminders();
     });
 
@@ -18,13 +18,13 @@ describe('get daily reminders', () => {
             days: [schedule.day.monday],
         });
 
-        jest.setSystemTime(new Date('2021-01-25T12:00:00.000Z')); // Previous Monday
+        jasmine.clock().mockDate(new Date('2021-01-25T12:00:00.000Z')); // Previous Monday
         expect(schedule.getDailyReminders()).toEqual([]);
 
-        jest.setSystemTime(new Date('2021-02-01T12:00:00.000Z')); // Monday
+        jasmine.clock().mockDate(new Date('2021-02-01T12:00:00.000Z')); // Monday
         expect(schedule.getDailyReminders()).toEqual(['test']);
 
-        jest.setSystemTime(new Date('2021-02-08T12:00:00.000Z')); // Next Monday
+        jasmine.clock().mockDate(new Date('2021-02-08T12:00:00.000Z')); // Next Monday
         expect(schedule.getDailyReminders()).toEqual([]);
     });
 
@@ -36,16 +36,16 @@ describe('get daily reminders', () => {
             days: [schedule.day.saturday, schedule.day.sunday],
         });
 
-        jest.setSystemTime(new Date('2021-02-05T12:00:00.000Z')); // Friday
+        jasmine.clock().mockDate(new Date('2021-02-05T12:00:00.000Z')); // Friday
         expect(schedule.getDailyReminders()).toEqual([]);
 
-        jest.setSystemTime(new Date('2021-02-06T12:00:00.000Z')); // Saturday
+        jasmine.clock().mockDate(new Date('2021-02-06T12:00:00.000Z')); // Saturday
         expect(schedule.getDailyReminders()).toEqual(['test']);
 
-        jest.setSystemTime(new Date('2021-02-07T12:00:00.000Z')); // Sunday
+        jasmine.clock().mockDate(new Date('2021-02-07T12:00:00.000Z')); // Sunday
         expect(schedule.getDailyReminders()).toEqual(['test']);
 
-        jest.setSystemTime(new Date('2021-02-08T12:00:00.000Z')); // Monday
+        jasmine.clock().mockDate(new Date('2021-02-08T12:00:00.000Z')); // Monday
         expect(schedule.getDailyReminders()).toEqual([]);
     });
 });

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "jest.test": "env TZ=GMT ../node_modules/.bin/jest jest.test.js"
+    "jest.test": "env TZ=GMT ../node_modules/.bin/jest jest.test.js",
+    "jasmine.test": "env TZ=GMT ../node_modules/.bin/jasmine jasmine.test.js",
+    "sinon.test": "env TZ=GMT ../node_modules/.bin/mocha sinon.test.js"
   },
   "keywords": [],
   "author": "",
