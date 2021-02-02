@@ -32,3 +32,11 @@ Our `getDailyReminders` method simply gets the current date and filters the remi
 matches and the date falls between the `start` and `end`. It then returns each of the corresponding labels.
 
 Our `clearReminders` method simply resets the list of reminders. We've also exposed the `day` of week lookup object.
+
+### test setup
+
+In our [jasmine.test.js](/Dates/jasmine.test.js#L3-11) file, we can simply call to `install` the jasmine clock,
+which mocks out timing functionality in JavaScript.
+
+We also have set up a called to `uninstall` to restore normal behavior and also call `clearReminders` to
+avoid tests polluting one another.
