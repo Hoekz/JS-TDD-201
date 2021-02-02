@@ -42,3 +42,9 @@ in `jest 27`.
 
 We also have set up a called to `useRealTimers` to restore normal behavior and also call `clearReminders` to
 avoid tests polluting one another.
+
+### set system time
+
+We can then create a test in [our test file](/Dates/jest.test.js#L13-29) that illustrates how to mock a date.
+We can make calls to `jest.setSystemTime` with a constructed `Date` to set the exact time and verify that
+when the date and day of week match, we get back the created reminder.
