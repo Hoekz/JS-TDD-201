@@ -48,3 +48,11 @@ to avoid tests polluting one another.
 We can then create a test in [our test file](/Dates/sinon.test.js#L17-33) that illustrates how to mock a date.
 We can call our clock's `setSystemTime` with a constructed `Date` to set the exact time and verify that when
 the date and day of week match, we get back the created reminder.
+
+### run the tests
+
+When we run the tests, we can actually add an extra layer of safety to avoid potential timezone issues.
+
+`NodeJS` uses the environment variable `TZ` to determine what timezone to create dates for, so we can
+simply use `env TZ=GMT npm run sinon.test` to ensure our tests always run in the same timezone, regardless
+of if we are running on a personal machine, or on a build machine elsewhere.
