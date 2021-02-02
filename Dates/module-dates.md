@@ -40,3 +40,9 @@ which mocks out timing functionality in JavaScript.
 
 We also have set up a called to `uninstall` to restore normal behavior and also call `clearReminders` to
 avoid tests polluting one another.
+
+### mock date
+
+We can then create a test in [our test file](/Dates/jasmine.test.js#L13-29) that illustrates how to mock a date.
+We can make a call to `jasmine.clock().mockDate` with a constructed `Date` to set the exact time and verify
+that when the date and day of week match, we get back the created reminder.
