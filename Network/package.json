@@ -4,9 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "custom.test": "../node_modules/.bin/jest ./custom",
+    "msw.test": "../node_modules/.bin/jest ./msw",
+    "websocket.test": "../node_modules/.bin/jest ./websocket"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@testing-library/dom": "^7.29.4",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/user-event": "^12.6.3",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.8.3",
+    "isomorphic-fetch": "^3.0.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-websocket-mock": "^2.2.0",
+    "jsdom": "^16.4.0",
+    "jsdom-global": "^3.0.2",
+    "mock-socket": "^9.0.3",
+    "msw": "^0.26.1",
+    "regenerator-runtime": "^0.13.7"
+  }
 }
