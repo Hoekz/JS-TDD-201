@@ -28,3 +28,15 @@ be able to turn on and off the mock at will for extra control and explicitness i
 In our [test.js](/Network/custom/test.js#L7-13), we've set up a `beforeAll` to `install` our mock
 and an `afterAll` to `uninstall` it, which simply translate to the mock being active and then normal
 behavoir being restored.
+
+### mocking routes
+
+We can also determine how we want to be able to mock routes. I've chosen to use a `mock` method that accepts one or more methods,
+a url pattern, and a few extra options not shown [here](/Network/custom/test.js#L15-26). The return of this call is a mock that
+I can then call `response` and pass in the JSON I want the endpoint to return.
+
+Another decision was to include a `reset` call in the [afterEach](/Network/custom/test.js#L28-31) to allow each test to be treated
+as though the mocks have not been used before.
+
+There are many other approaches that could be taken to setting up these mocks, but remember that readability and flexibility
+are important when rolling your own mock if it needs to be updated for future tests.
