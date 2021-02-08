@@ -19,3 +19,12 @@ There are a couple of external dependencies that will not be covered here such a
 in this particular chapter. It is also very likely that if you use an official starting point of a particular library like
 `React` or `Angular`, much of this configuration will be handled for you and getting testing working will be a simpler
 process.
+
+### setup and teardown
+
+To start out, let's consider how we want to interact with our mock during testing. Ideally, we will
+be able to turn on and off the mock at will for extra control and explicitness in the tests.
+
+In our [test.js](/Network/custom/test.js#L7-13), we've set up a `beforeAll` to `install` our mock
+and an `afterAll` to `uninstall` it, which simply translate to the mock being active and then normal
+behavoir being restored.
