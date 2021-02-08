@@ -64,3 +64,13 @@ Some more work is done in the `Response` class as well, but already we can tell 
 and robustness that could be done. This is a major tradeoff of implementing this mock yourself: you get to
 control it and can make it as simple as your situation calls for, but with the cost of edge-cases not
 being covered or new test cases requiring changes to the mock.
+
+### internals - Response
+
+In our [Response class](/Network/custom/mock-fetch.js#L29-47), we add some properties to mock out a real `fetch` response
+such as `url`, `status`, `headers`, and `body`.
+
+The `headers` have their own class to mimick the real behavior and we call `freeze` to ensure they are read-only. We also
+check if a the `body` is JSON and set the `"content-type"` header to reflect this if it is missing.
+
+We've also implemented the `ok` property which just reflects a successful `status` code.
