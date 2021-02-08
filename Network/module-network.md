@@ -48,3 +48,19 @@ methods are very simple. `install` simply sets `global.fetch` to our mocked func
 definition, and `reset` empties out the `mocks` array.
 
 Before we look at how to register a new mock, let's take a look at our `mockFetch` implementation.
+
+### mockFetch
+
+The [mockFetch](/Network/custom/mock-fetch.js#L86-107) implementation does a couple of things:
+
+ 1) backfill the config with the normal `fetch` defaults.
+ 2) removes the `body` of the request if it is a `GET` since this combination is not allowed.
+ 3) find the first mock that matches the method, url, body, and headers.
+ 4) If no match is found reject the request.
+ 5) Record the call.
+ 6) Create and resolve the response.
+
+Some more work is done in the `Response` class as well, but already we can tell there's a lot more checking
+and robustness that could be done. This is a major tradeoff of implementing this mock yourself: you get to
+control it and can make it as simple as your situation calls for, but with the cost of edge-cases not
+being covered or new test cases requiring changes to the mock.
