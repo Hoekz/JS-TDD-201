@@ -74,3 +74,11 @@ The `headers` have their own class to mimick the real behavior and we call `free
 check if a the `body` is JSON and set the `"content-type"` header to reflect this if it is missing.
 
 We've also implemented the `ok` property which just reflects a successful `status` code.
+
+### internals - Response.json
+
+We've also mocked out [Response.json](/Network/custom/mock-fetch.js#L49-65) to first check that the `body` has
+not been consumed yet, mark it as consumed, and then return the `body` as JSON.
+
+[Response.text](/Network/custom/mock-fetch.js#L67-75) is also mocked in a similar way, though it just returns
+the `body` as a string.
