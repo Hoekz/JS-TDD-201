@@ -40,3 +40,11 @@ as though the mocks have not been used before.
 
 There are many other approaches that could be taken to setting up these mocks, but remember that readability and flexibility
 are important when rolling your own mock if it needs to be updated for future tests.
+
+### internals - exports
+
+Taking a look some of the internals of our mock in [mock-fetch.js](/Network/custom/mock-fetch.js#L144-155), we can see that most of our
+methods are very simple. `install` simply sets `global.fetch` to our mocked function, `uninstall` restores the original `fetch`
+definition, and `reset` empties out the `mocks` array.
+
+Before we look at how to register a new mock, let's take a look at our `mockFetch` implementation.
