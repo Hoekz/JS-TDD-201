@@ -82,3 +82,16 @@ not been consumed yet, mark it as consumed, and then return the `body` as JSON.
 
 [Response.text](/Network/custom/mock-fetch.js#L67-75) is also mocked in a similar way, though it just returns
 the `body` as a string.
+
+### internal - mock
+
+The actual creation of a route with [mock](/Network/custom/mock-fetch.js#L116-142) sets up the necessary checks
+such as which method(s) to check against, create a RegExp for the URL pattern to match, allow for filtering based off the
+`body` or `headers` (both default to just `pass`). The `mock` then gets put at the front of the mock list so that
+matches before any previous mocks that may be less exact.
+
+We expose a wrapper to the test writer that allows them to `remove` the mock, get whether the mock has been `called` yet,
+and to alter the `response` the mock should return.
+
+For the RegExp, I've used a simple function called [urlToRegex](/Network/custom/mock-fetch.js#L112-114) function that converts
+the pattern `/:anything` to effectively `/.*` to allow for more ease when writing URLs to match.
