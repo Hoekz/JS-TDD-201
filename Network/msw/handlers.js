@@ -11,7 +11,14 @@ module.exports = [
         image: '/user-images/05af49e38d27c16b.png',
         tagline: 'JavaScript Developer at WWT',
     })),
-    rest.put(`${baseUrl}/profile/tagline`, json({
-        success: true,
-    })),
+    rest.put(`${baseUrl}/profile/tagline`, (req, res, ctx) => {
+        if (!req.body) {
+            return res(
+                ctx.status(400),
+                ctx.json({ error: 'No tagline provided.' }),
+            );
+        }
+
+        return res(ctx.json({ success: true }));
+    }),
 ];
