@@ -144,3 +144,23 @@ Our new test asserts on 3 things:
 Running the test, we can see that none of these assertions pass, because we only handled the case of `fetch`
 erroring out, which is not the case when a `400` is returned. Rather, the `ok` flag is set to `false`. Let's
 update our implementation to get the test to pass.
+
+### response.ok
+
+With our updated implementation, we capture the response, check the `ok` flag and throw an error if it
+is `false`. This keeps us from updating the store's value as well.
+
+This example illustrates the need to test both happy and sad paths for network activity, as well as
+having a robust mock. If our mocking library made the same wrong assumption the store did -- that `fetch`
+would throw an error for a bad request, we might never have noticed our error until it was already
+out in production.
+
+For small projects or very simple situations, using a custom mock of `fetch` can work just fine. But when
+an application begins to scale and grow in complexity, it's better to rely on a dedicated solution to
+mock out network traffic.
+
+In our case, while we are mocking out `fetch` and that may be enough for now, we could at some point bring
+in code that relies on `XMLHttpRequest` and now we also have to mock that interface. We may also need to
+track the behavior of uploading files, submitting forms, or some of the other more complicated network
+requests. In those cases, our mock is much too thin and could become brittle or unmaintainable the more
+we try to expand it.

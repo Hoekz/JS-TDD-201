@@ -12,16 +12,17 @@ const store = {
             return json;
         },
         async updateTagline(tagline) {
-            try {
-                await fetch(`${baseUrl}/profile/tagline`, {
-                    method: 'PUT',
-                    body: tagline,
-                });
+            const response = await fetch(`${baseUrl}/profile/tagline`, {
+                method: 'PUT',
+                body: tagline,
+            });
 
-                store.values.profile.tagline = tagline;
-            } catch (e) {
-                throw new Error('could not update email.');
+            if (!response.ok) {
+                const { error } = await response.json();
+                throw new Error(error);
             }
+
+            store.values.profile.tagline = tagline;
         },
         reset() {
             store.values = {};
