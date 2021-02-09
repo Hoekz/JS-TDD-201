@@ -95,3 +95,15 @@ and to alter the `response` the mock should return.
 
 For the RegExp, I've used a simple function called [urlToRegex](/Network/custom/mock-fetch.js#L112-114) function that converts
 the pattern `/:anything` to effectively `/.*` to allow for more ease when writing URLs to match.
+
+### store
+
+Let's take a look at the file we're actually testing, [store.js](/Network/custom/store.js#L4-27). We can see we have 2 `actions`
+that make use of `fetch`:
+
+The action `getProfile` calls to the `/profile` endpoint, retrieves the JSON, and attaches it to the store's `values` property.
+
+The action `updateTagline` calls to the `/profile/tagline` endpoint with a `PUT` method and, assuming the request does not fail,
+updates the value in the store.
+
+We also have a `reset` action to clear out any stored values.
