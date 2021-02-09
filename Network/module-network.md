@@ -112,3 +112,12 @@ We also have a `reset` action to clear out any stored values.
 
 Looking at our actual test implementation, we see [our test](/Network/custom/test.js#L33-38) for `getProfile` that simply calls
 the action and asserts the store receives the values setup in [our mock route](/Network/custom/test.js#L16-21).
+
+### test updateTagline
+
+We can also see [our test](/Network/custom/test.js#L40-49) around `updateTagline`, which first asserts the mock has
+not been called yet, calls the actions, and asserts the updated `tagline` is set and the [mock route](/Network/custom/test.js#L23-25).
+
+If we take a closer look, however, we can see that we're only testing that the mock is called with the correct
+method and url. And indeed, if we go back to [our action](/Network/custom/store.js#L14-21), we see that we never
+pass the `tagline` to the call to `fetch`.
