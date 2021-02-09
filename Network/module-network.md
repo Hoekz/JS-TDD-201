@@ -127,3 +127,8 @@ pass the `tagline` to the call to `fetch`.
 We can add a second mock on the same route that returns a `400` when no body is included and update our success
 response to require a body be present. Running the tests shows us that now the test fails when asserting on the
 successful route being called. Let's make the update to send in the tagline.
+
+### add body
+
+Now that we've added the body to our request, we can see our tests pass. However, we've identified a new test to write:
+handling when no `tagline` is sent (i.e. `updateTagline` is called with an empty string `''`). Let's add this test.
