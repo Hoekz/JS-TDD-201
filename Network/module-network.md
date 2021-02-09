@@ -132,3 +132,15 @@ successful route being called. Let's make the update to send in the tagline.
 
 Now that we've added the body to our request, we can see our tests pass. However, we've identified a new test to write:
 handling when no `tagline` is sent (i.e. `updateTagline` is called with an empty string `''`). Let's add this test.
+
+### new test
+
+Our new test asserts on 3 things:
+
+1) The call with an empty string `''` fails.
+2) The error message is the error from our mocked route.
+3) The store value is not updated locally.
+
+Running the test, we can see that none of these assertions pass, because we only handled the case of `fetch`
+erroring out, which is not the case when a `400` is returned. Rather, the `ok` flag is set to `false`. Let's
+update our implementation to get the test to pass.

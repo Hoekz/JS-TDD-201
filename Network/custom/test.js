@@ -53,4 +53,20 @@ describe('store', () => {
         expect(store.values.profile.tagline).toEqual('Fullstack Developer at WWT');
         expect(putMock.called).toEqual(true);
     });
+
+    it('should error when no tagline is sent', async () => {
+        await store.actions.getProfile();
+
+        let failed = false;
+
+        try {
+            await store.actions.updateTagline('');
+        } catch (e) {
+            failed = true;
+            expect(e.message).toEqual('No tagline provided.');
+        }
+
+        expect(failed).toBeTruthy();
+        expect(store.values.profile.tagline).toEqual('JavaScript Developer at WWT');
+    });
 });
