@@ -107,3 +107,8 @@ The action `updateTagline` calls to the `/profile/tagline` endpoint with a `PUT`
 updates the value in the store.
 
 We also have a `reset` action to clear out any stored values.
+
+### test getProfile
+
+Looking at our actual test implementation, we see [our test](/Network/custom/test.js#L33-38) for `getProfile` that simply calls
+the action and asserts the store receives the values setup in [our mock route](/Network/custom/test.js#L16-21).
