@@ -121,3 +121,9 @@ not been called yet, calls the actions, and asserts the updated `tagline` is set
 If we take a closer look, however, we can see that we're only testing that the mock is called with the correct
 method and url. And indeed, if we go back to [our action](/Network/custom/store.js#L14-21), we see that we never
 pass the `tagline` to the call to `fetch`.
+
+### add mock
+
+We can add a second mock on the same route that returns a `400` when no body is included and update our success
+response to require a body be present. Running the tests shows us that now the test fails when asserting on the
+successful route being called. Let's make the update to send in the tagline.

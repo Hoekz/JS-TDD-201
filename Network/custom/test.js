@@ -20,7 +20,13 @@ describe('store', () => {
             tagline: 'JavaScript Developer at WWT',
         });
 
-        putMock = mockFetch.mock('PUT', '/api/profile/tagline').response({
+        mockFetch.mock('PUT', '/api/profile/tagline').response({
+            error: 'No tagline provided.',
+        }, 400);
+
+        putMock = mockFetch.mock('PUT', '/api/profile/tagline', {
+            body: (data) => !!data
+        }).response({
             success: true,
         });
     });
