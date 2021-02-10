@@ -55,3 +55,14 @@ on the message ID.
 
 We then assert that the text of the message has been correctly put in the message DOM and that the class `other`
 has been applied since the message is coming from a different sender.
+
+### outgoing message
+
+[Our second test](/Network/websocket/test.js#L35-50) focuses on handling a new message sent from the local instance of
+the app. We first `type` into our text field the message we want to send. Then we `click` the send button to initiate
+the request.
+
+We `await` the `nextMessage` our server receives (which is an array of messages) and extract the sent message. We check
+that the text is correct and then attach an `id` to the message and push it out to all the listeners. We find the
+created DOM node based off the message ID and assert that the text is correct and that the class `me` has been added
+since the message was sent by the local user.
