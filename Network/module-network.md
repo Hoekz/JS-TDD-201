@@ -21,3 +21,14 @@ official starting point of a particular library like React or Angular, much of t
 getting testing working will be a simpler process. If you are curious, the files to look at are the `.babelrc`, `jest.config.js`,
 `package.json`, and `msw/setupTests.js`. Be aware though that this is a rough minimum amount of dependencies and code to get
 this example working and should not be used as the starting point of a real project.
+
+### setup and teardown
+
+To start out, let's look at how to setup and teardown the `msw` server. For convenience, we
+run it in the [setupTests.js](/Network/msw/setupTests.js#L5-9) where we `require` our server, set it to
+`listen` before any tests run, have it `resetHandlers` after each test to cleanup the mocking mechanism,
+and `close` the server after all the tests have run.
+
+[Our server](/Network/msw/server.js#L1-5) simply takes the handlers we have created and calls to
+`setupServer`. This approach allows us to keep our handlers decoupled from how they are mocked as well as
+have easier control to turn off and on particular handlers potentially.
