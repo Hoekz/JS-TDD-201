@@ -45,3 +45,7 @@ We can use the same setup as before in [our test file](/Timing/jest.test.js#L38-
 
 And we can write a test that increments the time by a few different amounts and
 then `cancel` the interval in [our test file](/Timing/jest.test.js#L48-62).
+
+### run the tests
+
+We can of course run the tests and see that they all pass.
