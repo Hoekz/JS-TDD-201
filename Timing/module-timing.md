@@ -40,3 +40,8 @@ function is called.
 ### setup tests
 
 We can use the same setup as before in [our test file](/Timing/jest.test.js#L38-46).
+
+### last test
+
+And we can write a test that increments the time by a few different amounts and
+then `cancel` the interval in [our test file](/Timing/jest.test.js#L48-62).
