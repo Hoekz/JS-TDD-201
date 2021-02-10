@@ -55,3 +55,14 @@ The action `getProfile` calls to the `/profile` endpoint, retrieves the JSON, an
 The action `updateTagline` calls to the `/profile/tagline` endpoint with a `PUT` method and, assuming the request does not fail, updates the value in the store.
 
 We also have a reset action to clear out any stored values.
+
+### tests
+
+Looking at our actual test implementation in [test.js](/Network/msw/test.js#L3-21), we actually don't need to show
+any of the `msw` related code, as it has all been setup globally. If we needed to make tweaks however, we could use
+the `server.use` method provided to temporarily override behavior.
+
+Our first test simply checks that the `getProfile` action gets the expected values from our mocked route. Our second
+test does about the same for our `updateTagline` action, asserting that the value is updated in the store.
+
+We are missing a the sad path here though, where no `tagline` is sent to the server. Let's create that.
