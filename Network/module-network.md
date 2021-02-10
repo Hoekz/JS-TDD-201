@@ -66,3 +66,12 @@ We `await` the `nextMessage` our server receives (which is an array of messages)
 that the text is correct and then attach an `id` to the message and push it out to all the listeners. We find the
 created DOM node based off the message ID and assert that the text is correct and that the class `me` has been added
 since the message was sent by the local user.
+
+### client mechanics
+
+Both the [sending](/Network/websocket/messenger.js#L39-41) and [receiving](/Network/websocket/messenger.js#L23-29) are fairly
+straightforward implementations.
+
+In most real world situations, using a socket becomes more complicated as you add different message types and authentication.
+While you can use this library to mock for usage with `socket-io`, support is limited and may require a more robust solution,
+such as setting up a server-side `socket-io` mock server to test with.
