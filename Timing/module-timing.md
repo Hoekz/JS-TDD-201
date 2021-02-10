@@ -40,3 +40,7 @@ function is called.
 ### setup tests
 
 We can use the same setup as before in [our test file](/Timing/jasmine.test.js#L37-44).
+### last test
+
+And we can write a test that increments the time by a few different amounts and
+then `cancel` the interval in [our test file](/Timing/jasmine.test.js#L46-60).
