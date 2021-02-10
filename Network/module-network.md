@@ -66,3 +66,19 @@ Our first test simply checks that the `getProfile` action gets the expected valu
 test does about the same for our `updateTagline` action, asserting that the value is updated in the store.
 
 We are missing a the sad path here though, where no `tagline` is sent to the server. Let's create that.
+
+### new test
+
+Our new test asserts on 3 things:
+
+1) The call with an empty string `''` fails.
+2) The error message is the error from our mocked route.
+3) The store value is not updated locally.
+
+Running the test, we see that every still works and we now have coverage of both the happy and sad path.
+While there are other viable approaches, some of the benefits that come from using `msw` include:
+
+1) Mocking for both `fetch` and `XMLHttpRequest` without any extra work needed.
+2) Test execution that goes that little bit further, to the point where the webpage itself cannot tell a mock is being used.
+3) Resuable handlers for use in both tests and development.
+4) Support for GraphQL mocking.
