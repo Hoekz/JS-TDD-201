@@ -32,3 +32,16 @@ and `close` the server after all the tests have run.
 [Our server](/Network/msw/server.js#L1-5) simply takes the handlers we have created and calls to
 `setupServer`. This approach allows us to keep our handlers decoupled from how they are mocked as well as
 have easier control to turn off and on particular handlers potentially.
+
+### mocking routes
+
+In our [handlers.js](/Network/msw/handlers.js#L1-24) we have created our 2 mocked endpoints. We do this using the
+`rest` creator (`msw` also provides a `graphql` creator) which allows us to match requests with a method and url
+and then call a function in a very similar style to `ExpressJS`.
+
+Our `GET` for `/profile` simply returns a static JSON body with the data we want. Our `PUT` for `/profile/tagline`
+first checks if the request's body is present and responds with a `400` if not.
+
+In this example, a `baseUrl` is being used, as projects often use separately hosted static file and API routes. A
+`baseUrl` is not always required for `msw`, such as when operating in the browser and using the same base path as
+the static site, but is required when operating inside NodeJS when there is no DOM-like environment.
