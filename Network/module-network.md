@@ -45,3 +45,13 @@ first checks if the request's body is present and responds with a `400` if not.
 In this example, a `baseUrl` is being used, as projects often use separately hosted static file and API routes. A
 `baseUrl` is not always required for `msw`, such as when operating in the browser and using the same base path as
 the static site, but is required when operating inside NodeJS when there is no DOM-like environment.
+
+### store
+
+Let's take a look at the file we're actually testing, [store.js](/Network/msw/store.js#L4-32). We can see we have 2 actions that make use of fetch:
+
+The action `getProfile` calls to the `/profile` endpoint, retrieves the JSON, and attaches it to the store's values property.
+
+The action `updateTagline` calls to the `/profile/tagline` endpoint with a `PUT` method and, assuming the request does not fail, updates the value in the store.
+
+We also have a reset action to clear out any stored values.
