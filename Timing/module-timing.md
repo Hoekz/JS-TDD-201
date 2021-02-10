@@ -44,3 +44,7 @@ We can use the same setup as before in [our test file](/Timing/jasmine.test.js#L
 
 And we can write a test that increments the time by a few different amounts and
 then `cancel` the interval in [our test file](/Timing/jasmine.test.js#L46-60).
+
+### run the tests
+
+We can of course run the tests and see that they all pass.
