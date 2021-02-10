@@ -35,3 +35,23 @@ assertions and interactions to simulate the full behavior of our web app. Here's
 Our `app` is very simple vanilla JavaScript code that uses the native DOM APIs to create a basic messaging app.
 We're going to ignore the actual app's implementation for the most part and treat it as a black box, only
 focusing on the behavior the tests are looking for.
+
+### test setup
+
+To [setup](/Network/websocket/test.js#L11-23) for our tests, we need to do a couple of things:
+
+1) Create our mock server on the correct host with the handy `jsonProtocol` turned on, which allows us to send JSON without having to `stringify` it.
+2) Start the app. This creates our DOM and opens the websocket.
+3) Wait for our "server" to be `connected` to.
+4) Wait for a single message. This is because the app has been setup to [initially make a request for all previous messages](/Network/websocket/messenger.js#L31-33).
+
+For cleanup, we simply `stop` the app and `close` the server.
+
+### incoming message
+
+[Our first test](/Network/websocket/test.js#L25-33) focuses on testing our app handling a new incoming message.
+We call to `send` the message from the server and then find the DOM node created by our app via a test ID based
+on the message ID.
+
+We then assert that the text of the message has been correctly put in the message DOM and that the class `other`
+has been applied since the message is coming from a different sender.
