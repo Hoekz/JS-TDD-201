@@ -2,31 +2,31 @@
 
 The goal of this course is to dive deeper into the particulars of testing in JavaScript.
 
-## General Timing
+## General Timing (Complete)
 
  - Jest
  - Jasmine
  - Sinon
 
-## Dates
+## Dates (Complete)
 
  - Jest
  - Jasmine
  - Sinon
  - MockDate
 
-## Network Activity
+## Network Activity (Complete)
 
  - Mocking fetch yourself (jest)
  - Using `msw` (jest)
  - Mock WebSocket with `jest-websocket-mock` or `mock-socket`
 
-## NodeJS
+## NodeJS (Coming Soon)
 
  - Testing ExpressJS
  - Testing File Operations (jest)
 
-## React
+## React (Coming Soon)
 
  - Testing functional components
  - Testing Class-based components
@@ -35,7 +35,7 @@ The goal of this course is to dive deeper into the particulars of testing in Jav
  - Testing routing
  - Testing redux
 
-## Angular
+## Angular (Coming Soon)
 
  - Testing components
  - Testing component bindings (input/output)
@@ -43,7 +43,7 @@ The goal of this course is to dive deeper into the particulars of testing in Jav
  - Testing services
  - Testing pipes
 
-## End to End
+## End to End (In Progress)
 
  - Testing full end to end with Cypress
  - Testing stubbed API with Cypress
