@@ -4,31 +4,27 @@ The goal of this course is to dive deeper into the particulars of testing in Jav
 
 ## General Timing
 
- - Using jest: `jest.useFakeTimers()`
- - Using sinon: `sinon.useFakeTimers()`
- - Using jasmine: `jasmine.clock().install()`
+ - Jest
+ - Jasmine
+ - Sinon
 
 ## Dates
 
- - Using jest: `jest.useFakeTimers()`
- - Using sinon: `sinon.useFakeTimers()`
- - Using jasmine: `jasmine.clock().mockDate()`
- - Using MockDate: `MockDate.set()`
+ - Jest
+ - Jasmine
+ - Sinon
+ - MockDate
 
 ## Network Activity
 
- - Mock at the service level
- - Mock fetch using jest
- - Mock fetch using jasmine
- - Use `msw`
+ - Mocking fetch yourself (jest)
+ - Using `msw` (jest)
  - Mock WebSocket with `jest-websocket-mock` or `mock-socket`
-
 
 ## NodeJS
 
  - Testing ExpressJS
- - Testing File Operations with jest
- - Testing File Operations with jasmine
+ - Testing File Operations (jest)
 
 ## React
 
