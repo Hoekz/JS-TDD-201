@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "node_modules/.bin/serve",
+    "api": "node api",
+    "test.api": "env DB=./test.db PORT=6001 node test-api",
+    "cypress.stub.test": "./node_modules/.bin/cypress run --env MOCK=1 --spec ./cypress/integration/e2e-spec.js",
+    "cypress.full.test": "./node_modules/.bin/cypress run --spec ./cypress/integration/e2e-spec.js",
+    "playwright.stub.test": "env MOCK=1 ../node_modules/.bin/jest ./playwright --runInBand",
+    "playwright.full.test": "../node_modules/.bin/jest ./playwright --runInBand"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +18,11 @@
   "devDependencies": {
     "cypress": "^6.3.0",
     "playwright": "^1.8.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "serve": "^11.3.2",
+    "sqlite3": "^5.0.1"
   }
 }

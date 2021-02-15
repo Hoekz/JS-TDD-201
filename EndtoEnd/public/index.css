@@ -1,0 +1,62 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#lists, #todos {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 20rem;
+    height: 100vh;
+    border-left: 1px solid black;
+}
+
+#todos {
+    flex: 2;
+    max-width: 40rem;
+    border-right: 1px solid black;
+}
+
+#todo-details, #list-name {
+    width: calc(100% - 6rem);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list .item, .form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid black;
+}
+
+button.delete {
+    border: none;
+    background: none;
+    color: #aa3333;
+    cursor: pointer;
+}
+
+#lists .item.active {
+    background: #bbb;
+}
+
+#todos .item:not(.active) {
+    text-decoration: line-through;
+    color: #888;
+}
