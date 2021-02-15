@@ -51,3 +51,16 @@ In our `describe`, we setup `browser` and `page` declarations that let us `launc
 wrapping that `page` in our own Page Object and call `load` to vist our website.
 
 To cleanup, we simply `close` the page after each test and `close` the browser when we're all done. Now, let's look at our page object.
+
+### Page Object
+
+If you are unfamiliar with Page Objects, you can read more about the concept [here](https://martinfowler.com/bliki/PageObject.html). In the simplest
+terms, a Page Object is meant to allow you to write tests more like they are from the perspective of a user using the website and less like a
+programming searching an HTML document.
+
+You already saw the instantiation of our page object in the test file, but we can take a closer look at the implementation in
+[app-page.js](/EndtoEnd/playwright/app-page.js#L6-23). Ignoring the `mockRoutes` for now, this is a very simple object, simply
+wrapping the `page` that has been passed in.
+
+We can see the basic commands that have already been used: `load` for navigating to the site and `close` for closing the page. We'll
+continue by taking a look at some of our tests alongside other methods we've declared in our page object.
