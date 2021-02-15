@@ -16,3 +16,13 @@ to both the stubs and the website being designed incorrectly.
 
 Each team's situation is going to be different and the decision of where to draw the line needs to be made as a team
 for the best chance at your end to end tests giving you confidence in app.
+
+## Playwright
+
+[Playwright](https://playwright.dev/docs/intro/) is a relatively new test automation library created by Microsoft.
+
+The main selling points are cross-browser API, multiple context or page setups, easy network interception, and ability to be
+used with pretty much any test runner like `jest` or `jasmine`.
+
+Two approaches are shown in this chapter: a full end to end approach and a stubbed network approach. Each of these approaches
+have tradeoffs, but they've also been setup so that the effort to switch between the two is minimal.
