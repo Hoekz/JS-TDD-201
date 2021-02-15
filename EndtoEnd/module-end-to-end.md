@@ -86,3 +86,13 @@ Our [page object](/EndtoEnd/playwright/app-page.js#L33-39) shows that our `todoC
 `listCount` and our `selectList` method simply calls the `click` method with the appropriate child selector.
 
 A [small utility](/EndtoEnd/playwright/app-page.js#L3-3)  was created to allow for searching for a negative or positive child index.
+
+### Last Test
+
+Our [last test](/EndtoEnd/playwright/e2e.test.js#L31-56) has been set up a bit differently. Because we want this test to be able to
+execute independently from any other test, we've set up a `beforeEach` to `selectList` and `addTodo` as well as an `afterEach`
+to `deleteTodo` and assert that the original `todoCount` has been returned to. This is so that if one of the assertions in the
+test body fails, we still end up cleaning up the created todo.
+
+The actual body of the test asserts that the `todoCount` has increased by one and that the `todo` that was created contains
+the right details and is flagged as an `active` task via a class.
