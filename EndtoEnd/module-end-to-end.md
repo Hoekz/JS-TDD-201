@@ -75,3 +75,14 @@ You can see that our test needs to `await` the properties, as they need to be re
 
 You can also note the `$$eval` call in our `listCount` getter, which allows us to evaluate a function against all matching
 elements (in our case, we just want to count them). You can also use `$eval` to only match the first element.
+
+### Second Test
+
+Our [second test](/EndtoEnd/playwright/e2e.test.js#L25-29), we check that selecting a list displays the correct `todoCount`
+of 3. This comes from selecting the last list visible, which is from our [test-data.json](/EndtoEnd/test-data.json#L1-12) that
+was used to seed our database before the tests are run.
+
+Our [page object](/EndtoEnd/playwright/app-page.js#L33-39) shows that our `todoCount` is basically what we saw with
+`listCount` and our `selectList` method simply calls the `click` method with the appropriate child selector.
+
+A [small utility](/EndtoEnd/playwright/app-page.js#L3-3)  was created to allow for searching for a negative or positive child index.
