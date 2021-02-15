@@ -1,4 +1,8 @@
 node_modules/
 
+*/cypress/screenshots/*
+*/cypress/plugins/*
+*/cypress/support/*
+
 # Learn It directory
 .learnit/
