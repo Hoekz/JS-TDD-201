@@ -1,0 +1,12 @@
+[
+    { "id": "000000", "name": "First List", "tasks": [
+        { "id": "000001", "details": "First Task", "status": true },
+        { "id": "000002", "details": "Second Task", "status": false }
+    ]},
+    { "id": "000010", "name": "Second List", "tasks": []},
+    { "id": "000020", "name": "Third List", "tasks": [
+        { "id": "000021", "details": "First Task", "status": true },
+        { "id": "000022", "details": "Second Task", "status": true },
+        { "id": "000023", "details": "Third Task", "status": true }
+    ]}
+]
