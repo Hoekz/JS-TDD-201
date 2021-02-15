@@ -96,3 +96,15 @@ test body fails, we still end up cleaning up the created todo.
 
 The actual body of the test asserts that the `todoCount` has increased by one and that the `todo` that was created contains
 the right details and is flagged as an `active` task via a class.
+
+### Rest of Page Object
+
+In [our page object](/EndtoEnd/playwright/app-page.js#L41-62) we can see each of the methods we were just using to
+write out test. The `addTodo` uses the `fill` method to type into the details field and then we `await` both
+the `click` to add and the corresponding network response with `waitForResponse` using a RegExp for a small amount
+of sanity.
+
+To get a particular todo, we simply use the `$eval` call and capture its `innerText` and `className`, returning that
+object to the test for assertions.
+
+Deleting a todo will simply `click` the `.delete` button and again `waitForResponse` for that network activity.
