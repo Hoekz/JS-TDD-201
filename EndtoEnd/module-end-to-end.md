@@ -39,3 +39,15 @@ command output, the website should be available on port [5000](http://localhost:
 
 The API uses [ExpressJS](https://expressjs.com/) and [sqlite3](https://www.npmjs.com/package/sqlite3) and the frontend is simply
 served with [serve](https://www.npmjs.com/package/serve) and uses only native browser APIs.
+
+### Setup
+
+Let's first take a look at our setup. We are using `jest` as our test runner and using a single [e2e.test.js](/EndtoEnd/playwright/e2e.test.js#L1-18) file.
+
+Because `playwright` is independent of the test runner, we can simply `require` its APIs. In this case, we're pulling in the `chromium`
+launcher. Next we see pulling in a `app-page` constructor, which we'll look more at in the next step.
+
+In our `describe`, we setup `browser` and `page` declarations that let us `launch` chromium and then open a `newPage`. We are then
+wrapping that `page` in our own Page Object and call `load` to vist our website.
+
+To cleanup, we simply `close` the page after each test and `close` the browser when we're all done. Now, let's look at our page object.
