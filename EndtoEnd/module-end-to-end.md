@@ -64,3 +64,14 @@ wrapping the `page` that has been passed in.
 
 We can see the basic commands that have already been used: `load` for navigating to the site and `close` for closing the page. We'll
 continue by taking a look at some of our tests alongside other methods we've declared in our page object.
+
+### First Test
+
+Our [first test](/EndtoEnd/playwright/e2e.test.js#L20-23) asserts on the initial state of the page. We are sanity checking the
+`title` of the page as well as stating that we initially expect the `listCount` to be 3. In our [page object](/EndtoEnd/playwright/app-page.js#L25-31),
+we are simply using these properties as proxies to the playwright interface.
+
+You can see that our test needs to `await` the properties, as they need to be retrieved from the browser first.
+
+You can also note the `$$eval` call in our `listCount` getter, which allows us to evaluate a function against all matching
+elements (in our case, we just want to count them). You can also use `$eval` to only match the first element.
