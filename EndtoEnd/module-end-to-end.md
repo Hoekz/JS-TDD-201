@@ -128,3 +128,10 @@ function is simply a wrapper around `route.fulfill`, setting the `contentType`, 
 Looking at a more [complex route](/EndtoEnd/playwright/mocked-routes.js#L22-34) for creating a new task, we can
 also access the `url` method to extract information from it, in this case, a `listId`. We also extract the posted
 JSON data using the `pastDataJSON` method.
+
+### Run the e2e tests
+
+We can then watch the fully end to end tests run with the command `npm run playwright.full.test` which runs
+`jest ./playwright --runInBand`. The `runInBand` flag is to run the tests serially, which may not matter for
+this set of tests, but with more complex tests, its possible changing the server state in one test may affect
+another if they are running in parallel.
