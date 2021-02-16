@@ -117,3 +117,14 @@ and attaches them using the `route` method.
 
 These `mockedRoutes` come from another file that is simply a dictionary of `urlString -> function` and then a `urlToRegex`
 method is used to ensure the base url can be ignored and the standard `/thing/:id` syntax can be used for matching.
+
+### Mock Route Internals
+
+The actual [mocked-routes.js](/EndtoEnd/playwright/mocked-routes.js#L11-15) maps a url to a function that takes a
+`route` object and a `req` or request object. We can call to check the `method` the URL was called with and
+respond with the same test data used to seed the database. The [json](/EndtoEnd/playwright/mocked-routes.js#L3-8)
+function is simply a wrapper around `route.fulfill`, setting the `contentType`, `body`, CORS header, and `status`.
+
+Looking at a more [complex route](/EndtoEnd/playwright/mocked-routes.js#L22-34) for creating a new task, we can
+also access the `url` method to extract information from it, in this case, a `listId`. We also extract the posted
+JSON data using the `pastDataJSON` method.
