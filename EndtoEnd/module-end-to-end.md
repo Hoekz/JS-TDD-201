@@ -81,3 +81,13 @@ You'll notice these assertions are not wrapped in an `expect` or `assert`, but r
 either the assertion times out or the data matches.
 
 This feature helps avoid flaky test behavior while still providing an easy to read syntax.
+
+### Second Test
+
+Our [second test](/EndtoEnd/cypress/integration/e2e-spec.js#L20-24), we check that selecting a list displays the correct
+number of `todos`, which is 3. This comes from selecting the last list visible, which is from our [test-data.json](/EndtoEnd/test-data.json#L1-12)
+that has been used to seed our database before the tests are run.
+
+Our [page object](/EndtoEnd/cypress/app-page.js#L25-31) shows that in order to select the list, we `get` the element with `cy` and then
+simply call to `click` it. This is using a [small utility](/EndtoEnd/cypress/app-page.js#L3-3) that allows for searching for a
+negative or positive child index.
