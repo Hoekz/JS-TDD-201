@@ -91,3 +91,14 @@ that has been used to seed our database before the tests are run.
 Our [page object](/EndtoEnd/cypress/app-page.js#L25-31) shows that in order to select the list, we `get` the element with `cy` and then
 simply call to `click` it. This is using a [small utility](/EndtoEnd/cypress/app-page.js#L3-3) that allows for searching for a
 negative or positive child index.
+
+### Last Test
+
+Our [last test](/EndtoEnd/cypress/integration/e2e-spec.js#L26-51) has been set up a bit differently. Because we
+want this test to be able to execute independently from any other test, we've set up a `beforeEach` to `selectList`
+and `addTodo` as well as an `afterEach` to `deleteTodo` and assert that the original `todoCount` has been
+returned to. This is so that if one of the assertions in the test body fails, we still end up cleaning up the
+created todo.
+
+The actual body of the test asserts that the number of `todos` has increased by one and that the `todo` that
+was created contains the right details and is flagged as an `active` task via a class.
