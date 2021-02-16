@@ -108,3 +108,12 @@ To get a particular todo, we simply use the `$eval` call and capture its `innerT
 object to the test for assertions.
 
 Deleting a todo will simply `click` the `.delete` button and again `waitForResponse` for that network activity.
+
+### Route Interception
+
+Our [tests](/EndtoEnd/playwright/e2e.test.js#L4-4) are setup to pull in an environment variable that indicates to use mocks
+for the API. Our [page object](/EndtoEnd/playwright/app-page.js#L10-14), when that flag is set, iterates over the handlers
+and attaches them using the `route` method.
+
+These `mockedRoutes` come from another file that is simply a dictionary of `urlString -> function` and then a `urlToRegex`
+method is used to ensure the base url can be ignored and the standard `/thing/:id` syntax can be used for matching.
