@@ -135,3 +135,10 @@ We can then watch the fully end to end tests run with the command `npm run playw
 `jest ./playwright --runInBand`. The `runInBand` flag is to run the tests serially, which may not matter for
 this set of tests, but with more complex tests, its possible changing the server state in one test may affect
 another if they are running in parallel.
+
+### Run the stubbed tests
+
+Now we can also run the stubbed tests with `npm run playwright.stub.test` which runs the same command (`jest ./playwright --runInBand`)
+but adds an `env MOCK=1` to the front so that our tests know to enable the mocks. It's important to remember that
+while stubbing these endpoints can speed up running the tests, it also adds risk around not checking that the website
+is not properly integrated with the backend.
