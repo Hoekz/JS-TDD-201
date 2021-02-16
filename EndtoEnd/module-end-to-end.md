@@ -52,3 +52,19 @@ though we're going to be calling the CLI with only this file explicitly.
 We're including a `app-page` constructor, which we'll look at the internals of in the next step. For now, we can see we
 can use the familar `describe` and `beforeEach` functions to setup our test, creating a new `page` which we simply
 `load` before each test.
+
+### Page Object
+
+If you are unfamiliar with Page Objects, you can read more about the concept [here](https://martinfowler.com/bliki/PageObject.html). In the simplest
+terms, a Page Object is meant to allow you to write tests more like they are from the perspective of a user using the website and less like a
+program searching an HTML document.
+
+Our [app-page.js](/EndtoEnd/cypress/app-page.js#L6-15) where our page object class lives shows us that we don't even define a constructor. Mainly,
+because we don't have any internal state to manage. Because of the globally available `cy`, we can simply use our page object as a proxy to
+certain calls, like our `load` function calling `visit`.
+
+In this case, we only have to pass `'/'`, because Cypress gets a [cypress.json](/EndtoEnd/cypress.json#L1-4) config with a `baseUrl` already for convenience.
+
+Its worth noting that Cypress actually advises to [stop using page objects](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/)
+and use "App Actions" -- basically exposing an API in the browser for direct manipulation of the app state. Read the article for more details
+on their arguments and be mindful of what constitutes a valuable test for your particular use case.
