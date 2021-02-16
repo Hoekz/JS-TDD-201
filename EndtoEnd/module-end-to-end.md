@@ -3,7 +3,7 @@
 This module focuses on writing end to end tests with both `Cypress` and `Playwright`. There are 2 approaches considered
 for each: full end to end and with a stubbed API.
 
-With full end to end tests, you get the benefit of ensure the full technology stack is working together properly. This
+With full end to end tests, you get the benefit of ensuring the full technology stack is working together properly. This
 can come with a couple of downsides such as tests taking longer to run, needing more work to keep tests independent of
 one another, and more work going into making tests work in environments like a build pipeline. It also may not be
 feasible if work between the backend and frontend is split in such a way as to make it impractical (disproportionate
