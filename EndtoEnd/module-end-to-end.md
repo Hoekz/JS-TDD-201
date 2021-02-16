@@ -40,3 +40,15 @@ command output, the website should be available on port [5000](http://localhost:
 
 The API uses [ExpressJS](https://expressjs.com/) and [sqlite3](https://www.npmjs.com/package/sqlite3) and the frontend is simply
 served with [serve](https://www.npmjs.com/package/serve) and uses only native browser APIs.
+
+### Setup
+
+Let's first take a look at our setup. Cypress comes with its own test runner built in and exposes a couple
+global objects such as `cy` and `Cypress`. We're using it to run a single test file, [e2e-spec.js](/EndtoEnd/cypress/integration/e2e-spec.js#L1-13).
+
+Cypress tends to be fairly opinionated on things, which is why the file is located in `/cypress/integration`, even
+though we're going to be calling the CLI with only this file explicitly.
+
+We're including a `app-page` constructor, which we'll look at the internals of in the next step. For now, we can see we
+can use the familar `describe` and `beforeEach` functions to setup our test, creating a new `page` which we simply
+`load` before each test.
