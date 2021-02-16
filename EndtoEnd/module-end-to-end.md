@@ -68,3 +68,16 @@ In this case, we only have to pass `'/'`, because Cypress gets a [cypress.json](
 Its worth noting that Cypress actually advises to [stop using page objects](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/)
 and use "App Actions" -- basically exposing an API in the browser for direct manipulation of the app state. Read the article for more details
 on their arguments and be mindful of what constitutes a valuable test for your particular use case.
+
+### First Test
+
+Our [first test](/EndtoEnd/cypress/integration/e2e-spec.js#L15-18) asserts on the initial state of the page.
+We are sanity checking the `title` of the page as well as stating that we initially expect the number of `lists` to
+be 3. In our [page object](/EndtoEnd/cypress/app-page.js#L17-23) we are simply using these properties as
+proxies to the Cypress interface.
+
+You'll notice these assertions are not wrapped in an `expect` or `assert`, but rather are using Cypress's built-in
+`should` utility that will automatically rerun the retrieving and testing of the data we are asserting against until
+either the assertion times out or the data matches.
+
+This feature helps avoid flaky test behavior while still providing an easy to read syntax.
