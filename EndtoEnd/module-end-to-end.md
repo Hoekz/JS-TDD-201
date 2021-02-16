@@ -16,3 +16,14 @@ to both the stubs and the website being designed incorrectly.
 
 Each team's situation is going to be different and the decision of where to draw the line needs to be made as a team
 for the best chance at your end to end tests giving you confidence in app.
+
+## Cypress
+
+[Cypress](https://www.cypress.io/) is one of the most common frameworks for writing end to end and integration tests.
+
+The main selling points are cross-browser API (with Firefox and Edge gaining support at the start of 2020), an all-in-one
+development experience, easy network interception, and a robust debugging experience that includes time-traveling, videos,
+and screenshots.
+
+Two approaches are shown in the chapter: a full end to end approach and a stubbed network approach. Each of these approaches
+have tradeoffs, but they've also been setup so that the effort to switch between the two is minimal.
