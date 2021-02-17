@@ -1,12 +1,5 @@
 const testData = require('../test-data');
 
-const json = (route, data) => route.fulfill({
-    contentType: 'application/json',
-    body: JSON.stringify(data),
-    headers: { 'access-control-allow-origin': '*' },
-    status: 200,
-});
-
 module.exports = {
     '/lists': (req) => {
         if (req.method === 'GET') {
