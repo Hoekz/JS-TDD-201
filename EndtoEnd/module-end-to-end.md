@@ -139,3 +139,15 @@ We also extract the posted JSON data using the `body` property, which has been a
 We can then watch the fully end to end tests run with the command `npm run cypress.full.test` which runs
 `cypress run --spec ./cypress/integration/e2e-spec.js`. In this case, we could remove the `spec` specifier
 as this should be the only test file identified by Cypress.
+
+### Run the stubbed tests
+
+Now we can also run the stubbed tests with `npm run cypress.stub.test` which runs the same command
+(`cypress run --spec ./cypress/integration/e2e-spec.js`) but adds `--env MOCK=1` to the call so that
+our tests know to enable the mocks. It's important to remember that while stubbing these endpoints can
+speed up running the tests, it also adds risk around not checking that the website is properly integrated
+with the backend.
+
+Besides `cypress run`, Cypress also provides `cypress open` which launches a GUI for the test runner, allowing
+you to choose what tests to run, time travel tests, have tests live reload, and more. For more information on
+the CLI, check out the [Cypress Docs](https://docs.cypress.io/guides/guides/command-line.html).
