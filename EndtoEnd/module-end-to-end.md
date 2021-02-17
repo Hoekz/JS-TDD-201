@@ -113,3 +113,12 @@ To get a particular todo, we simply use `get` call for the particular `.item` of
 
 Deleting a todo will simply `click` the `.delete` button and Cypress will rerun any following assertions while
 it waits for that network activity to complete and the app to resume removing the element.
+
+### Route Interception
+
+Our [tests](/EndtoEnd/cypress/integration/e2e-spec.js#L7-13) are setup to pull in a Cypress `env` variable that indicates
+when to use mocks for the API. Our [page object](/EndtoEnd/cypress/app-page.js#L7-11) loops through our set of handlers
+and attaches them using the `intercept` method.
+
+These `mockedRoutes` come from another file that is simply a dictionary of `urlString -> function` and then a `urlToRegex`
+method is used to ensure the base url can be ignored and the standard `/thing/:id` syntax can be used for matching.
