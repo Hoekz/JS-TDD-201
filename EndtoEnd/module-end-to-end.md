@@ -102,3 +102,14 @@ created todo.
 
 The actual body of the test asserts that the number of `todos` has increased by one and that the `todo` that
 was created contains the right details and is flagged as an `active` task via a class.
+### Rest of Page Object
+
+In our [page object](/EndtoEnd/cypress/app-page.js#L33-44) we can see each of the methods we were just using to
+write out test. The `addTodo` uses the `type` method to type into the details field and then we `click` the add
+button. Because of Cypress's internal action queue, we don't have to wait for the first action to complete because
+Cypress does that for us.
+
+To get a particular todo, we simply use `get` call for the particular `.item` of interest and assert on the element.
+
+Deleting a todo will simply `click` the `.delete` button and Cypress will rerun any following assertions while
+it waits for that network activity to complete and the app to resume removing the element.
