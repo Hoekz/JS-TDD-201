@@ -122,3 +122,14 @@ and attaches them using the `intercept` method.
 
 These `mockedRoutes` come from another file that is simply a dictionary of `urlString -> function` and then a `urlToRegex`
 method is used to ensure the base url can be ignored and the standard `/thing/:id` syntax can be used for matching.
+
+### Mock Route Internals
+
+The actual [mocked-routes.js](/EndtoEnd/cypress/mocked-routes.js#L4-8) maps a url to a function that takes a
+single `req` or request parameter. We can check the `method` property to make sure that matches our
+expectation and `reply` with the same test data used to seed the database. Cypress will automatically
+change our JSON into a proper response body and headers.
+
+Looking at a more [complex route](/EndtoEnd/cypress/mocked-routes.js#L15-27) for creating a new task, we
+can also access the `url` property in order to extract information from it, in this case, a `listId`.
+We also extract the posted JSON data using the `body` property, which has been already parsed for us.
