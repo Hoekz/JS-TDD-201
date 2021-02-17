@@ -1,6 +1,20 @@
 # JavaScript TDD 201
 
-The goal of this course is to dive deeper into the particulars of testing in JavaScript.
+The goal of this course is to dive deeper into the particulars of testing in JavaScript. This course
+was created with and is intended to be consumed with [learnit](https://www.npmjs.com/package/learnit).
+
+If you do not want to use `learnit`, the basic structure of this course is that each module is represented
+as a branch in git, each chapter is then a branch off of a module, and each step is a labeled commit
+in the chapter branch. Each folder in the project corresponds to a module and, when on the respective
+branch, has a markdown file that is effectively a script for `learnit`. If you navigate to the top
+of a branch using `git checkout <module>-chapter-<chapter>`, you should be able to view the full
+script of that chapter, which will contain references to the relevant files.
+
+If you are using `learnit`, the recommended setup is to use 3 terminal windows or tabs, one for the
+instructor (`learnit start`), one for relevant code snippets (`learnit output snippets`), and one for
+commands (`learnit output commands`).
+
+Below is a breakdown of the modules and chapters included.
 
 ## General Timing (Complete)
 
@@ -21,31 +35,22 @@ The goal of this course is to dive deeper into the particulars of testing in Jav
  - Using `msw` (jest)
  - Mock WebSocket with `jest-websocket-mock` or `mock-socket`
 
-## NodeJS (Coming Soon)
+## End to End (Complete)
 
- - Testing ExpressJS
- - Testing File Operations (jest)
+ - Cypress: testing full end to end and stubbed API
+ - Playwright: testing full end to end and stubbed API
 
-## React (Coming Soon)
+## NodeJS (Future Release)
 
- - Testing functional components
- - Testing Class-based components
- - Testing Hooks
- - Testing connected components
- - Testing routing
- - Testing redux
+ - List of existing tutorials.
+ - Waiting for insight into examples needed.
 
-## Angular (Coming Soon)
+## React (Future Release)
 
- - Testing components
- - Testing component bindings (input/output)
- - Testing routing
- - Testing services
- - Testing pipes
+ - List of existing tutorials.
+ - Waiting for insight into examples needed.
 
-## End to End (In Progress)
+## Angular (Future Release)
 
- - Testing full end to end with Cypress
- - Testing stubbed API with Cypress
- - Testing full end to end with Playwright
- - Testing stubbed API with Playwright
+ - List of existing tutorials.
+ - Waiting for insight into examples needed.
