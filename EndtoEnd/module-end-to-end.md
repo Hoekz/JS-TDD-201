@@ -133,3 +133,9 @@ change our JSON into a proper response body and headers.
 Looking at a more [complex route](/EndtoEnd/cypress/mocked-routes.js#L15-27) for creating a new task, we
 can also access the `url` property in order to extract information from it, in this case, a `listId`.
 We also extract the posted JSON data using the `body` property, which has been already parsed for us.
+
+### Run the e2e tests
+
+We can then watch the fully end to end tests run with the command `npm run cypress.full.test` which runs
+`cypress run --spec ./cypress/integration/e2e-spec.js`. In this case, we could remove the `spec` specifier
+as this should be the only test file identified by Cypress.
