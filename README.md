@@ -42,15 +42,15 @@ Below is a breakdown of the modules and chapters included.
 
 ## NodeJS (Future Release)
 
- - List of existing tutorials.
+ - List of existing resources.
  - Waiting for insight into examples needed.
 
 ## React (Future Release)
 
- - List of existing tutorials.
+ - List of existing resources.
  - Waiting for insight into examples needed.
 
 ## Angular (Future Release)
 
- - List of existing tutorials.
+ - List of existing resources.
  - Waiting for insight into examples needed.
