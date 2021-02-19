@@ -2,6 +2,7 @@
 
 The goal of this course is to dive deeper into the particulars of testing in JavaScript. This course
 was created with and is intended to be consumed with [learnit](https://www.npmjs.com/package/learnit).
+Once you've installed with `npm i -g learnit`, you can download the course with `learnit download <git-url>`.
 
 If you do not want to use `learnit`, the basic structure of this course is that each module is represented
 as a branch in git, each chapter is then a branch off of a module, and each step is a labeled commit
