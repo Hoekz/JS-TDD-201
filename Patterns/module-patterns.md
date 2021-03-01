@@ -19,3 +19,9 @@ end to end tests as well, which could save you brittle unit tests, but needs to 
 
 We can see the usage of our abstraction layer in [messages.js](/Patterns/abstraction/messages.js#L1-15). We `require` and use our
 `http` service to try to `get` a list of messages, and if that call fails, display an error message.
+
+### Example: Http
+
+Our [http.js](/Patterns/abstraction/http.js#L1-13) is actually relying on a non-existent package to help illustrate the point.
+We are pretending that we have some other service with a `get` method that returns us a `success` flag and `data`. In the case
+that `success` is falsy, we `throw` the data, as it should contain more information about why we did not succeed.
