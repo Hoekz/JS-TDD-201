@@ -41,6 +41,11 @@ Below is a breakdown of the modules and chapters included.
  - Cypress: testing full end to end and stubbed API
  - Playwright: testing full end to end and stubbed API
 
+## Patterns (Complete)
+
+ - Abstraction Layer
+ - Dependency Injection
+
 ## NodeJS (Future Release)
 
  - List of existing resources.
