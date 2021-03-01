@@ -31,3 +31,13 @@ but most existing systems should be able to warn you about this.
 
 Finally, we have a [reset](/Patterns/injection/engine.js#L31-43) function that allows us to remove all calculated values and
 optionally remove all registered modules as well. We then expose all 3 of these functions.
+
+### Example: Messages
+
+We can see an example of how this simple engine is used in [messages.js](/Patterns/injection/messages.js#L1-16). We `register`
+a new module called `'messages'` which depends on `'http'`. Our `init` function then receives an `http` object resolved by
+the engine.
+
+In this particular case, we're using an `http.get` call that throws when a problem occurs. We're only calling this once here,
+but we could wrap our call inside another function so that it could be invoked later on and multiple times, but would still
+end up using the same injected `http` object.
