@@ -46,3 +46,14 @@ end up using the same injected `http` object.
 
 The injected module [http](/Patterns/injection/http.js#L1-19) also must call to `register` itself with the engine. This module
 simply provides a `get` method that always gets `json` data from `fetch` and throws when the status code is not a `200`.
+
+### Test: Setup
+
+Here's how dependency injection can be tested. In the simplest case, we could actually just call any `init` function directly with
+whatever dependencies we desired, but this can quickly become impractical as the dependency tree gets deeper and we need to test
+how the modules are integrated with one another.
+
+Instead, we can mock a module by calling `register` in our tests. Because messages needs to be `run` before the dependency is resolved,
+we can load it on its own and then `register` a fake `'http'` module in our [test.js](/Patterns/injection/test.js#L1-16).
+
+We can also hook into our `reset` function so that we guarantee new instances of each module in each test.
