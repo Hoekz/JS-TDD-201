@@ -23,7 +23,7 @@
     "branch.network-chapter-websockets.description": "Websockets",
     "learnit.network-chapter-websockets.client mechanics.commands": "[{\"run\":\"npm run websocket.test\",\"refresh\":false,\"cwd\":\"Network\"}]",
     "learnit.main.commands": "[{\"run\":\"npm ci\",\"refresh\":false,\"cwd\":\"\",\"prefix\":\"install\",\"silent\":true,\"once\":true}]",
-    "learnit.main.locked": "true",
+    "learnit.main.locked": "false",
     "learnit.module-angular.commands": "[{\"run\":\"npm ci\",\"refresh\":false,\"cwd\":\"Angular\",\"prefix\":\"install\",\"silent\":true,\"once\":true}]",
     "learnit.module-angular.cwd": "\"Angular\"",
     "learnit.module-end-to-end.commands": "[{\"run\":\"npm ci\",\"refresh\":false,\"cwd\":\"EndtoEnd\",\"prefix\":\"install\",\"silent\":true,\"once\":true}]",
@@ -42,5 +42,11 @@
     "branch.module-node.description": "Node",
     "learnit.module-node.cwd": "\"Node\"",
     "branch.module-react.description": "React",
-    "branch.module-angular.description": "Angular"
+    "branch.module-angular.description": "Angular",
+    "branch.module-patterns.description": "Patterns",
+    "learnit.module-patterns.cwd": "\"Patterns\"",
+    "branch.patterns-chapter-abstraction-layer.description": "Abstraction Layer",
+    "branch.patterns-chapter-dependency-injection.description": "Dependency Injection",
+    "learnit.patterns-chapter-abstraction-layer.Test: Run.commands": "[{\"run\":\"npm run test.abstraction\",\"refresh\":false,\"cwd\":\"Patterns\",\"prefix\":\"test\"}]",
+    "learnit.patterns-chapter-dependency-injection.Test: Run.commands": "[{\"run\":\"npm run test.injection\",\"refresh\":false,\"cwd\":\"Patterns\",\"prefix\":\"test\"}]"
 }
