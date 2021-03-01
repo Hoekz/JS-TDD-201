@@ -33,3 +33,12 @@ We're now able to set up our tests to take our abstraction into account. In our 
 
 If you are unfamiliar with `jest.mock`, The call is automatically hoisted by `babel` and can intercept both `require` and `import`. We
 can then get access to our mock by using `require` in our test if we need to make modifications.
+
+### Test: Run
+
+Our actual [tests](/Patterns/abstraction/test.js#L6-33) can then setup mocks for both the happy path (returning a list
+of messages that need to be filtered) and the sad path (a rejection by the third party call) and verify that both
+are handled correctly.
+
+We could now switch out the underlying code in `http` for some other third party library, make extra calls, keep track
+of state internally, or many other things and our implementation and tests around `messages` don't need to change at all.
