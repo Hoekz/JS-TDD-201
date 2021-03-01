@@ -25,3 +25,11 @@ We can see the usage of our abstraction layer in [messages.js](/Patterns/abstrac
 Our [http.js](/Patterns/abstraction/http.js#L1-13) is actually relying on a non-existent package to help illustrate the point.
 We are pretending that we have some other service with a `get` method that returns us a `success` flag and `data`. In the case
 that `success` is falsy, we `throw` the data, as it should contain more information about why we did not succeed.
+
+### Test: Setup
+
+We're now able to set up our tests to take our abstraction into account. In our [test.js](/Patterns/abstraction/test.js#L1-4) we can use
+`jest.mock` in order mock our abstract `http` module so that the third party library is not visible at all.
+
+If you are unfamiliar with `jest.mock`, The call is automatically hoisted by `babel` and can intercept both `require` and `import`. We
+can then get access to our mock by using `require` in our test if we need to make modifications.
