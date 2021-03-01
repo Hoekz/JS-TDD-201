@@ -14,3 +14,8 @@ on them, which can be important when dealing with libraries that can have side e
 is that now there is code to be covered by tests in your abstraction layer that is vulnerable to the same breaking
 changes or side effects as before. Testing the abstraction layer can arguably be covered by something like
 end to end tests as well, which could save you brittle unit tests, but needs to be agreed upon as a team.
+
+### Example: Messages
+
+We can see the usage of our abstraction layer in [messages.js](/Patterns/abstraction/messages.js#L1-15). We `require` and use our
+`http` service to try to `get` a list of messages, and if that call fails, display an error message.
