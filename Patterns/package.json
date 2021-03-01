@@ -1,12 +1,12 @@
 {
-  "name": "Patterns",
+  "name": "patterns",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "engine.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test.injection": "../node_modules/.bin/jest injection/test.js",
+    "test.abstraction": "../node_modules/.bin/jest abstraction/test.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC"
 }
