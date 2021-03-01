@@ -26,3 +26,8 @@ This allows for easily creating a dependency tree with any level of depth to it,
 
 It is worth noting that this implementation does not include detection of circular dependencies, which would result in a call stack overflow,
 but most existing systems should be able to warn you about this.
+
+### Engine: Reset
+
+Finally, we have a [reset](/Patterns/injection/engine.js#L31-43) function that allows us to remove all calculated values and
+optionally remove all registered modules as well. We then expose all 3 of these functions.
