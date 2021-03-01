@@ -41,3 +41,8 @@ the engine.
 In this particular case, we're using an `http.get` call that throws when a problem occurs. We're only calling this once here,
 but we could wrap our call inside another function so that it could be invoked later on and multiple times, but would still
 end up using the same injected `http` object.
+
+### Example: Http
+
+The injected module [http](/Patterns/injection/http.js#L1-19) also must call to `register` itself with the engine. This module
+simply provides a `get` method that always gets `json` data from `fetch` and throws when the status code is not a `200`.
