@@ -15,3 +15,14 @@ This chapter will use a very simple implementation of a dependency injection eng
 We can start by taking a look at a very basic injection engine. Our [engine.js](/Patterns/injection/engine.js#L1-13) starts with
 a simple `register` function that adds a named `module` with its list of `dependencies` and `init` function. For convenience,
 it also returns a simple wrapper that will `run` that module.
+
+### Engine: Resolve
+
+The `run` helper simply calls the [resolve](/Patterns/injection/engine.js#L15-29) function, which checks to see if a `value` has already
+been calculated and, if not, recursively calls to `resolve` the dependencies before injecting the resulting values into the `init`
+function and returning the result.
+
+This allows for easily creating a dependency tree with any level of depth to it, as well as sharing dependencies between modules.
+
+It is worth noting that this implementation does not include detection of circular dependencies, which would result in a call stack overflow,
+but most existing systems should be able to warn you about this.
