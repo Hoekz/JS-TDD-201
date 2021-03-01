@@ -9,3 +9,9 @@ Angular. The idea behind dependency injection is to allow any function, object, 
 dependent on to be passed in or injected, thereby allowing tests to pass in any replacements such as mocks.
 
 This chapter will use a very simple implementation of a dependency injection engine for clarity.
+
+### Engine: Register
+
+We can start by taking a look at a very basic injection engine. Our [engine.js](/Patterns/injection/engine.js#L1-13) starts with
+a simple `register` function that adds a named `module` with its list of `dependencies` and `init` function. For convenience,
+it also returns a simple wrapper that will `run` that module.
