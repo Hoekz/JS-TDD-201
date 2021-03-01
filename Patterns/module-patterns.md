@@ -57,3 +57,13 @@ Instead, we can mock a module by calling `register` in our tests. Because messag
 we can load it on its own and then `register` a fake `'http'` module in our [test.js](/Patterns/injection/test.js#L1-16).
 
 We can also hook into our `reset` function so that we guarantee new instances of each module in each test.
+
+### Test: Run
+
+Our actual [tests](/Patterns/injection/test.js#L18-43) can then setup mocks for both the happy path (returning a list of messages
+that need to be filtered) and the sad path (a rejection by the API call) and verify that our `messages` module handles both
+cases correctly.
+
+Notice that now we could switch out the implementation of `http` to use something like `axios` instead of the native `fetch`,
+or maybe retrieve the data from a `WebSocket` or `ServiceWorker` and our tests around `messages` don't need to know about it, so
+long as we keep the interface consistent.
